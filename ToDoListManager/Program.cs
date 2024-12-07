@@ -4,7 +4,7 @@ namespace ToDoListManager
 {
     internal class Program
     {
-        private static List<string> tasks;
+        private static List<string> tasks = new List<string>();
         static void Main(string[] args)
         {                                 
                 
@@ -42,8 +42,7 @@ namespace ToDoListManager
             Console.WriteLine("4. Quit");
         }
         public static void AddTask()
-        {
-            tasks = new List<string>();
+        {            
 
             Console.Clear();
             Console.WriteLine("Write the task you would like to your to do list. type 'exit' when done ");
@@ -64,10 +63,11 @@ namespace ToDoListManager
             int i = 0;
 
             Console.Clear();
-            
-            if (tasks.Count < 0)
+            Console.WriteLine("Your tasks:\n==========");
+            if (tasks.Count == 0)
             {
-                Console.WriteLine("No available tasks!");
+                Console.WriteLine("No tasks available!");
+                Console.ReadLine();
             }
             else
             {
